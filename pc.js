@@ -1,15 +1,3 @@
-/*
-Armado de pc con presupuesto final
-1- Que marca de procesador vas a usar?
-2- lista de procesadores
-3- elije una motherboard
-4- elije la cantidad de memoria ram
-5- elije una placa de video
-6- elije una fuente
-7- elije el gabinete
-8- presupuesto final
-9- interes si paga en cuotas (3, 6, 12) o descuento si paga efectivo/transferencia/debito.
-*/
 
 // construccion de productos
 class armadoPc {
