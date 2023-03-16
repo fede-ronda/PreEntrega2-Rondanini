@@ -23,18 +23,20 @@ const fuente2 = new armadoPc("1200w", 11, 70000);
 const gabinete1 = new armadoPc("matrexx50", 12, 25000);
 const gabinete2 = new armadoPc("matrexx70", 13, 50000);
 
+const componentes = [ryzen3, ryzen5, mother1, mother2, ram1, ram2, placa1, placa2, placa3, fuente1, fuente2, gabinete1, gabinete2]
 
-let total = []
+const carrito = []
 
 let proceDeseado = parseInt(prompt("¿Qué procesador deseas elegir? 1. Ryzen 3 | 2. Ryzen 5"));
 let proceElegido = false
 let infoProce
 
 while (proceElegido === false) {
-    if (proceDeseado === 1) {
+    
+    if (proceDeseado === ryzen3.id) {
         proceElegido = true
-        infoProce = ryzen3
-    } else if (proceDeseado === 2) {
+        infoProce = ryzen3.precio
+    } else if (proceDeseado === ryzen5.id) {
         proceElegido = true
         infoProce = ryzen5
     } else {
@@ -131,4 +133,13 @@ while (gabineteElegido === false) {
     }
 }
 console.log(infoGabinete);
+
+console.log(carrito);
+let total = 0
+
+carrito.forEach(infoProce=>{
+    total = total+infoProce.precio
+});
+
+alert("El total de su compra es de: "+total);
 
