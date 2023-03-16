@@ -35,10 +35,12 @@ while (proceElegido === false) {
     
     if (proceDeseado === ryzen3.id) {
         proceElegido = true
-        infoProce = ryzen3.precio
+        infoProce = ryzen3
+        carrito.push(ryzen3)
     } else if (proceDeseado === ryzen5.id) {
         proceElegido = true
         infoProce = ryzen5
+        carrito.push(ryzen5)
     } else {
         proceDeseado = parseInt(prompt("Escoja un procesador de la siguiente lista: 1. Ryzen 3 | 2. Ryzen 5"))
     }
@@ -50,12 +52,14 @@ let motherElegida = false
 let infoMother
 
 while (motherElegida === false) {
-    if (motherDeseada === 3) {
+    if (motherDeseada === mother1.id) {
         motherElegida = true
         infoMother = mother1
-    } else if (motherDeseada === 4) {
+        carrito.push(mother1)
+    } else if (motherDeseada === mother2.id) {
         motherElegida = true
         infoMother = mother2
+        carrito.push(mother2)
     } else {
         motherDeseada = parseInt(prompt("Escoja una mothernoard de la siguiente lista: 3. B450 | 4. B550"))
     }
@@ -67,12 +71,14 @@ let ramElegida = false
 let infoRam
 
 while (ramElegida === false) {
-    if (ramDeseada === 5) {
+    if (ramDeseada === ram1.id) {
         ramElegida = true
         infoRam = ram1
-    } else if (ramDeseada === 6) {
+        carrito.push(ram1)
+    } else if (ramDeseada === ram2.id) {
         ramElegida = true
         infoRam = ram2
+        carrito.push(ram2)
     } else {
         ramDeseada = parseInt(prompt("Escoja una memoria RAM de la siguiente lista: 5. 2x16GB | 6. 2x32GB"))
     }
@@ -85,15 +91,18 @@ let infoPlaca
 
 while (placaElegida === false) {
     placaDeseada
-    if (placaDeseada === 7) {
+    if (placaDeseada === placa1.id) {
         placaElegida = true
         infoPlaca = placa1
-    } else if (placaDeseada === 8) {
+        carrito.push(placa1)
+    } else if (placaDeseada === placa2.id) {
         placaElegida = true
         infoPlaca = placa2
-    } else if (placaDeseada === 9) {
+        carrito.push(placa2)
+    } else if (placaDeseada === placa3.id) {
         placaElegida = true
         infoPlaca = placa3
+        carrito.push(placa3)
     } else {
         placaDeseada = parseInt(prompt("Escoja una placa de video de la siguiente lista: 7. RTX 2060 | 8. RTX 3080 | 9. RTX 4090"))
     }
@@ -105,12 +114,14 @@ let fuenteElegida = false
 let infoFuente
 
 while (fuenteElegida === false) {
-    if (fuenteDeseada === 10) {
+    if (fuenteDeseada === fuente1.id) {
         fuenteElegida = true
         infoFuente = fuente1
-    } else if (fuenteDeseada === 11) {
+        carrito.push(fuente1)
+    } else if (fuenteDeseada === fuente2.id) {
         fuenteElegida = true
         infoFuente = fuente2
+        carrito.push(fuente2)
     } else {
         fuenteDeseada = parseInt(prompt("Escoja una fuente de la siguiente lista: 10. 850w | 11. 1200w"))
     }
@@ -122,12 +133,14 @@ let gabineteElegido = false
 let infoGabinete
 
 while (gabineteElegido === false) {
-    if (gabineteDeseado === 12) {
+    if (gabineteDeseado === gabinete1.id) {
         gabineteElegido = true
         infoGabinete = gabinete1
-    } else if (gabineteDeseado === 13) {
+        carrito.push(gabinete1)
+    } else if (gabineteDeseado === gabinete2.id) {
         gabineteElegido = true
         infoGabinete = gabinete2
+        carrito.push(gabinete2)
     } else {
         gabineteDeseado = parseInt(prompt("Escoja un gabinete de la siguiente lista: 12. Matrexx 50 | 13. Matrexx 70"))
     }
@@ -135,11 +148,8 @@ while (gabineteElegido === false) {
 console.log(infoGabinete);
 
 console.log(carrito);
-let total = 0
 
-carrito.forEach(infoProce=>{
-    total = total+infoProce.precio
-});
+let total = carrito.reduce((acumulador, elemento) => acumulador + elemento.precio, 0)
 
-alert("El total de su compra es de: "+total);
+alert("El total de su compra es de: "+"$"+total);
 
